@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+
+  db_mysql:
+    image: mysql
+    restart: always
+    environment:
+      # we create new  user
+      MYSQL_DATABASE: 'database_ms'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'geslo@'
+      MYSQL_ROOT_PASSWORD: 'gesl0'
+    ports:
+      - 3306:3306
+    volumes:
+      - my_sql:/var/lib/mysql
+      - my_sql_config:/etc/mysql
+
+  web_py:
+    build:
+      context: ./work_db
+    ports:
+      - 5000:5000
+    
+      
+  init_py:
+    build:
+      context: ./init_db
+    ports:
+      - 5001:5001
+
+  frontend_html:
+    restart: always
+    build: 
+      context: ./frontend
+    ports:
+      - 8080:80
+
+  multi_go:
+    build:
+      context: ./multi_stage
+    ports:
+      - 5002:5002
+
+
+volumes:
+  my_sql:
+  my_sql_config:

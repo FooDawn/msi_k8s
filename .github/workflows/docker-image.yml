@@ -1,0 +1,65 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+    tags:
+      - "v*.*.*"
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+  
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check Out Repo 
+      uses: actions/checkout@v2
+      
+    - name: Login to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_HUB_USERNAME }}
+        password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+        
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+                
+    - name: Build and push frontend_html
+      uses: docker/build-push-action@v2
+      with:
+        context: ./docker_images/frontend
+        file: ./docker_images/frontend/Dockerfile
+        builder: ${{ steps.buildx.outputs.name }}
+        push: true
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/frontend_html:latest
+
+    - name: Build and push init_py 
+      uses: docker/build-push-action@v2
+      with:
+        context: ./docker_images/init_db
+        file: ./docker_images/init_db/Dockerfile
+        builder: ${{ steps.buildx.outputs.name }}
+        push: true
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/init_py:latest
+    
+    - name: Build and push web_py 
+      uses: docker/build-push-action@v2
+      with:
+        context: ./docker_images/work_db
+        file: ./docker_images/work_db/Dockerfile
+        builder: ${{ steps.buildx.outputs.name }}
+        push: true
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/web_py:latest
+
+    - name: Build and push multi_go
+      uses: docker/build-push-action@v2
+      with:
+        context: ./docker_images/multi_stage
+        file: ./docker_images/multi_stage/Dockerfile
+        builder: ${{ steps.buildx.outputs.name }}
+        push: true
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/multi_go:latest
+ 

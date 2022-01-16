@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WEB BU-JO</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" href="./css/style.css"> 
+</head>
+
+<style>
+
+.active-cyan-4 input[type=text]:focus:not([readonly]) {
+  border: 1px solid #4dd0e1;
+  box-shadow: 0 0 0 1px #4dd0e1;
+}
+
+.active-cyan-3 input[type=text] {
+  border: 1px solid #4dd0e1;
+  box-shadow: 0 0 0 1px #4dd0e1;
+}
+
+
+</style>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Bullets Generator</h1>
+      <h2>Use this to generate bullet points!</h2>
+        <div class="generate_points active-cyan-3 active-cyan-4 mb-4">
+            <form id="posting_points">
+
+                <label for="name">Name:</label>
+                    <input type="text" id="name" name="bname" placeholder="Name">
+                <br />
+                <label for="description">Description:</label>
+                    <input type="text" id="description" name="desc" placeholder="Description">
+                <br />
+                <input type="submit" value="Submit"><br />
+            </form>
+            <p />
+            <b> <p id="return_num"></p>
+                <p id="return_name"></p>
+                <p id="return_desc"></p>
+            </b>
+        </div>
+      <h2>Use this to get generated bullet points!</h2>
+        <div class="generate_points active-cyan-3 active-cyan-4 mb-4">
+            <p></p>
+            <div class="print_point">
+                <p>Type in only number you know is in a database.</p>
+                <form id="getting_points">
+
+                    <label for="number_id">Looking for post number:</label>
+                        <input type="number" min="1" id="number_id" name="num_id" placeholder="1">
+                    <br />
+                    <input type="submit" value="Submit">
+                </form>
+
+                <p />
+                <b> <p id="search_num"></p>
+                    <p id="search_name"></p>
+                    <p id="search_desc"></p>
+                </b> 
+                <p></p>
+            </div>            
+
+        </div>
+
+        
+    </div>
+   </div>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="js/data.js"></script>
+</body>
+
+</html>
