@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webpy-service
+  labels:
+    app: webpy
+spec:
+  selector:
+    app: webpy
+  ports:
+  - port: 5000
+    targetPort: 5000
+    protocol: TCP
+  type: LoadBalancer

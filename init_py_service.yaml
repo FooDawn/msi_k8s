@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: initpy-service
+  labels:
+    app: initpy
+spec:
+  selector:
+    app: initpy
+  ports:
+  - port: 5001
+    targetPort: 5001
+    protocol: TCP
+  type: LoadBalancer

@@ -1,4 +1,4 @@
-# MSI Docker domača naloga
+# Docker del
 ## Splošno o nalogi
 
 Naredila sem spletno aplikacijo v python flask, ki je razdeljena na dva dela. En del je za prejemanje post requestov od html strani za pisanje in prejemanje napisanega, drugi del je, zaradi manjše možnosti napake, za kreiranje in počiščenje baze.  

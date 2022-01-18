@@ -23,7 +23,7 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: secrets
+              name: mysql-credentials
               key: db_root_password
         ports:
         - containerPort: 3306
@@ -34,21 +34,5 @@ spec:
       volumes:
         - name: mysql-persistent-storage
           persistentVolumeClaim:
-            claimName: mysql-pv-claim
-
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: mysql
-  labels:
-    app: db
-spec:
-  ports:
-  - port: 3306
-    protocol: TCP
-    name: mysql
-  selector:
-    app: db
-  type: NodePort
+            claimName: mysql-pvc
+      restartPolicy: Always

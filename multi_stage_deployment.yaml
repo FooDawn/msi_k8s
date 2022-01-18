@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multistage-deploy
+  labels:
+    app: multistage
+spec:
+  selector:
+    matchLabels:
+      app: multistage
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: multistage
+    spec:
+      containers:
+      - name: multistage
+        image: foodawn/multi_go:latest
+        ports:
+        - containerPort: 5002

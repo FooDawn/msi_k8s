@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: initpy-deploy
+  labels:
+    app: initpy
+spec:
+  selector:
+    matchLabels:
+      app: initpy
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: initpy
+    spec:
+      containers:
+      - name: initpy
+        image: foodawn/init_py:latest
+        ports:
+        - containerPort: 5001

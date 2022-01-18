@@ -1,0 +1,5 @@
+docker_images
+
+work_db/__pycache__
+init_db/__pycache__
+__pycache__
