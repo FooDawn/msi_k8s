@@ -20,7 +20,8 @@ function writing_point(){
     event.preventDefault();
     // console.log(event);
 
-    let url = "http://localhost:5000/write_points";
+    // let url = "http://localhost:5000/write_points";
+    let url = "http://bullet_generation/write_points";
     //console.log(url);
     let js_res = null;
 
@@ -58,7 +59,8 @@ function getting_point(){
     event.preventDefault();
     // console.log(event);
 
-    let url = "http://localhost:5000/get_points";
+    // let url = "http://localhost:5000/get_points";
+    let url = "http://bullet_generation/get_points";
     // console.log(url);
 
     fetch(url, {method: 'POST', 

@@ -5,30 +5,31 @@ metadata:
   annotations:
 spec:
   rules:
-  - http:
+  - host: bullet_generation
+    http:
       paths:
-      - path: /test
+      - path: /
         pathType: Prefix
         backend:
           service:
-            name: frontend-service
+            name: frontend
             port:
               number: 80
-      - path: /init
+      - path: /create_db
         pathType: Prefix
         backend:
           service:
             name: initpy-service
             port:
               number: 5001
-      - path: /web
+      - path: /*_points
         pathType: Prefix
         backend:
           service:
             name: webpy-service
             port:
               number: 5000
-      - path: /monkeys
+      - path: /monkeys*
         pathType: Prefix
         backend:
           service:
