@@ -30,8 +30,8 @@ jobs:
     - name: Build and push frontend_html
       uses: docker/build-push-action@v2
       with:
-        context: ./docker_images/frontend
-        file: ./docker_images/frontend/Dockerfile
+        context: ./frontend
+        file: ./frontend/Dockerfile
         builder: ${{ steps.buildx.outputs.name }}
         push: true
         tags: ${{ secrets.DOCKER_HUB_USERNAME }}/frontend_html:latest
@@ -39,8 +39,8 @@ jobs:
     - name: Build and push init_py 
       uses: docker/build-push-action@v2
       with:
-        context: ./docker_images/init_db
-        file: ./docker_images/init_db/Dockerfile
+        context: ./init_db
+        file: ./init_db/Dockerfile
         builder: ${{ steps.buildx.outputs.name }}
         push: true
         tags: ${{ secrets.DOCKER_HUB_USERNAME }}/init_py:latest
@@ -48,8 +48,8 @@ jobs:
     - name: Build and push web_py 
       uses: docker/build-push-action@v2
       with:
-        context: ./docker_images/work_db
-        file: ./docker_images/work_db/Dockerfile
+        context: ./work_db
+        file: ./work_db/Dockerfile
         builder: ${{ steps.buildx.outputs.name }}
         push: true
         tags: ${{ secrets.DOCKER_HUB_USERNAME }}/web_py:latest
@@ -57,8 +57,8 @@ jobs:
     - name: Build and push multi_go
       uses: docker/build-push-action@v2
       with:
-        context: ./docker_images/multi_stage
-        file: ./docker_images/multi_stage/Dockerfile
+        context: ./multi_stage
+        file: ./multi_stage/Dockerfile
         builder: ${{ steps.buildx.outputs.name }}
         push: true
         tags: ${{ secrets.DOCKER_HUB_USERNAME }}/multi_go:latest
