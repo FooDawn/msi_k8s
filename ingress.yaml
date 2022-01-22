@@ -22,14 +22,14 @@ spec:
             name: initpy-service
             port:
               number: 5001
-      - path: /*_points
+      - path: /[a-z_]{10,12}
         pathType: Prefix
         backend:
           service:
             name: webpy-service
             port:
               number: 5000
-      - path: /monkeys*
+      - path: /go/.*
         pathType: Prefix
         backend:
           service:

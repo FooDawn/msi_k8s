@@ -3,7 +3,7 @@ Domača naloga za k8s
 
 ## Uporaba
 Preko git clone ali Download zip dobiš potrebne datoteke. Premakni se v ustezno mapo ter zaženi spodnji ukaz, ki bo buildal in zagnal vse potrebno.
-To počneš v izbrani VM in potrebuješ imeti naložen kubernetes. Če si študent pri predmetu MSI imaš med gradivom tutorial kako to narediti.
+To počneš v izbrani VM in potrebuješ imeti naložen kubernetes in minikube. Če si študent pri predmetu MSI imaš med gradivom tutorial kako to narediti.
 
 ```bash
 cd msi_k8s
@@ -13,9 +13,11 @@ chmod +x script.sh
 # poženeš
 ./script.sh
 ```
+Potem traja nekaj časa, da se vsi image-s potegnejo dol. 
+Lahko preveriš kaj se dogaja v drugem terminalu z ukazom `kubectl describe pods -n <name_veje>`. Pri meni je bil recimo <name_veje> `default`. Lahko pa odpreš dashboard v brskalniku z ukazom `minikube dashboard` v terminalu.
+Da dobiš ip strani odpri dashboard in pod ingress najdeš spletne strani ali pa v terminal vpiši `minikube tunnel` in vnesi sudo geslo. 
 
-
-
+Na koncu ugasni z `minikube stop; minikube delete`. Tako se tudi izbriše kar si delal.
 
 # Docker del
 ### Splošno o nalogi
