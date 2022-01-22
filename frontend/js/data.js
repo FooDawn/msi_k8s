@@ -11,18 +11,20 @@ let pointer_search_desc = document.getElementById("search_desc")
 let pointer_posting_points = document.getElementById("posting_points")
 let pointer_getting_points = document.getElementById("getting_points")
 
+
 window.onload = function (){
     pointer_posting_points.addEventListener("submit", writing_point);
     pointer_getting_points.addEventListener("submit", getting_point);
 }
+let myLoc = window.location.hostname;
 
 function writing_point(){
     event.preventDefault();
     // console.log(event);
 
     // let url = "http://localhost:5000/write_points";
-    let url = "http://192.168.49.2/write_points";
-    //console.log(url);
+    let url = "http://" + myLoc + "/write_points";
+    console.log(url);
     let js_res = null;
 
     fetch(url, {method: 'POST', 
@@ -60,7 +62,7 @@ function getting_point(){
     // console.log(event);
 
     // let url = "http://localhost:5000/get_points";
-    let url = "http://192.168.49.2/get_points";
+    let url = "http://" + myLoc + "/get_points";
     // console.log(url);
 
     fetch(url, {method: 'POST', 
