@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webpy-deploy
+  name: webpy-print-deploy
   labels:
-    app: webpy
+    app: webpy-print
 spec:
   selector:
     matchLabels:
-      app: webpy
+      app: webpy-print
   replicas: 4
   template:
     metadata:
       labels:
-        app: webpy
+        app: webpy-print
     spec:
       containers:
-      - name: webpy
-        image: foodawn/web_py:latest
+      - name: webpy-print
+        image: foodawn/web_py_print:latest
         ports:
         - containerPort: 5000

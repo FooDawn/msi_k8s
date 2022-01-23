@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: webpy-service
+  name: webpy-print-service
   labels:
-    app: webpy
+    app: webpy-print
 spec:
   selector:
-    app: webpy
+    app: webpy-print
   ports:
   - port: 5000
     targetPort: 5000

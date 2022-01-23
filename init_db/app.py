@@ -6,11 +6,6 @@ from random import randint
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
-  return render_template('hello.html')
-
-
-@app.route('/create_db')
 def db_init():
   mydb_conn = mysql.connector.connect(
     host="database_ms",

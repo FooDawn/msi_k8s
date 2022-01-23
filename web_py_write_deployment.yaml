@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webpy-write-deploy
+  labels:
+    app: webpy-write
+spec:
+  selector:
+    matchLabels:
+      app: webpy-write
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: webpy-write
+    spec:
+      containers:
+      - name: webpy-write
+        image: foodawn/web_py_write:latest
+        ports:
+        - containerPort: 5003
