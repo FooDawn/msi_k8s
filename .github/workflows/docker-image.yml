@@ -45,14 +45,23 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_HUB_USERNAME }}/init_py:latest
     
-    - name: Build and push web_py 
+    - name: Build and push web_py_print 
       uses: docker/build-push-action@v2
       with:
-        context: ./work_db
-        file: ./work_db/Dockerfile
+        context: ./work_db_print
+        file: ./work_db_print/Dockerfile
         builder: ${{ steps.buildx.outputs.name }}
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/web_py:latest
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/web_py_print:latest
+
+    - name: Build and push web_py_write 
+      uses: docker/build-push-action@v2
+      with:
+        context: ./work_db_write
+        file: ./work_db_write/Dockerfile
+        builder: ${{ steps.buildx.outputs.name }}
+        push: true
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/web_py_write:latest
 
     - name: Build and push multi_go
       uses: docker/build-push-action@v2

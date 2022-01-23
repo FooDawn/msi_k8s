@@ -17,12 +17,17 @@ services:
       - my_sql:/var/lib/mysql
       - my_sql_config:/etc/mysql
 
-  web_py:
+  web_py_print:
     build:
-      context: ./work_db
+      context: ./work_db_print
     ports:
       - 5000:5000
-    
+  
+  web_py_write:
+    build:
+      context: ./work_db_write
+    ports:
+      - 5003:5003
       
   init_py:
     build:
