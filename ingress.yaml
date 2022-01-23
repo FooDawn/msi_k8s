@@ -5,8 +5,7 @@ metadata:
   annotations:
 spec:
   rules:
-  - host: bullet-generation
-    http:
+  - http:
       paths:
       - path: /
         pathType: Prefix
@@ -16,20 +15,20 @@ spec:
             port:
               number: 80
       - path: /create_db
-        pathType: Prefix
+        pathType: Exact
         backend:
           service:
             name: initpy-service
             port:
               number: 5001
-      - path: /[a-z_]{10,12}
+      - path: /home
         pathType: Prefix
         backend:
           service:
             name: webpy-service
             port:
               number: 5000
-      - path: /go/.*
+      - path: /go/
         pathType: Prefix
         backend:
           service:
