@@ -43,5 +43,4 @@ def db_init():
 
 if __name__ == "__main__":
   app.run(port=5001)
-  
-return 'Prisel sem v init db app\n'
+
