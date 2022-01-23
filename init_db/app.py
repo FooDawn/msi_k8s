@@ -39,6 +39,8 @@ def db_init():
 
   return 'Database is created and it is empty.\n'
 
-    
+
+return 'Prisel sem v init db app\n'
+
 if __name__ == "__main__":
   app.run(port=5001)

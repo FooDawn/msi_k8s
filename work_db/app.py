@@ -110,6 +110,7 @@ def writting():
   return res
 
 
+return 'Prisel sem v work db app\n'
 
 
 if __name__ == "__main__":
