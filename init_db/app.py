@@ -9,7 +9,7 @@ app = Flask(__name__)
 def db_init():
   try:
     mydb_conn = mysql.connector.connect(
-      host="database_ms",
+      host="mysql",
       user="root",
       password="gesl0"
     )
