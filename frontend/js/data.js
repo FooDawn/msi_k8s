@@ -22,7 +22,7 @@ function writing_point(){
 
     // let url = "http://localhost:5000/write_points";
     let myLoc = window.location.hostname;
-    let url = "http://" + myLoc + "/write_points";
+    let url = "http://" + String(myLoc) + "/write_points";
 
     //console.log(url);
     let js_res = null;
@@ -63,7 +63,7 @@ function getting_point(){
 
     // let url = "http://localhost:5000/get_points";
     let myLoc = window.location.hostname;
-    let url = "http://" + myLoc + "/get_points";
+    let url = "http://" + String(myLoc) + "/get_points";
 
     // console.log(url);
 
