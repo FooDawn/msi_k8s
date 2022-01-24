@@ -36,7 +36,7 @@ Zelo veliko težav sem imela Ingressu in kako povezati backend v flasku s fronte
 - Mato sem ugotovila da imam drugačen ime host mysql baze kot pri dockerju.
 - Sedaj dela povezava z mqsql bazo samo vsakič prvo reče, da se ne more povezati, potem pa brez spremembe server poda dela.
 
-Provisioning je pri meni potekalo cca 15 minut, ker je kar dolgo vleko image iz dockerHuba. Lahko da je problem v nastavitevah virtualke v kateri sem delala (VMvawe) samo nisem tega raziskovala.
+Provisioning je pri meni potekalo cca 15 minut, ker je kar dolgo vleko image iz dockerHuba. Samo to je problem v nastavitvah virtualke v kateri sem delala (VMvawe), kot sem na koncu ugotovila.
 
 # Docker del
 ### Splošno o nalogi
@@ -48,9 +48,10 @@ Prav tako je multi-stage build z go aplikacijo, ki jo lahko vidiš na [localhost
 
 ## Uporaba
 Če želiš lahko uporabljaš docker. Premakni se v ustezno mapo ter zaženi spodnji ukaz, ki bo buildal in zagnal vse potrebno.
+Da bo tako kot je v spodnjih navodilih pojdi na [msi docker repository](https://github.com/FooDawn/msi_docker) in od delaj. V tej mapci so rahlo spremenjeni image-i in tako ne delajo čisto tako kot je napisano. Recimo ena sprememba je to da je glavna zadeva na portu 80 in ne na 8080.
 
 ```bash
-cd msi_k8s
+cd msi_docker
 docker-compose -f docker-compose.yml up --build
 ```
 V brskalniku greš na [localhost:5000/](http://localhost:5000/) ali [localhost:5001/](http://localhost:5001/), kjer so splošna navodila.
