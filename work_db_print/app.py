@@ -52,7 +52,7 @@ def get_points() :
     except mysql.connector.Error as error:
       return ("Failed to get record from MySQL table: {}".format(error))
 
-  return render_template("print.html")
+  return "Nic nisi POST-al. Pojdi na /\n"
 
 
 if __name__ == "__main__":

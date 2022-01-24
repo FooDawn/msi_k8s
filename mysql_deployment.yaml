@@ -24,6 +24,8 @@ spec:
             secretKeyRef:
               name: mysql-credentials
               key: db_root_password
+        - name: MYSQL_DATABASE
+          value: "database_ms"
         ports:
         - containerPort: 3306
           name: db-container
