@@ -27,6 +27,14 @@ Za več navodil si poglej posnetka v mapi posnetki.
 
 Kadarkoli lahko greš na http://go/
 
+## Težave pri programiranju
+    
+Zelo veliko težav sem imela Ingressu in kako povezati backend v flasku s frontendom. 
+- Prvo je bil da localhost verjetno ni več prav, tako da sm rabila dodati v frontend javascript ip strani, da ve kam pošiljati POST pakete.
+- Mi se mi uspelo povezati v katerkoli fukcijo v backend flask aplikaciji. To mi je potem uspelo rešiti tako da ingress poveže vse aplikacije na '/'
+- Potem mi ni uspelo povezati se s pravilno funkcijo v backend flask aplikaciji. Ker mi je uspelo se povezati na '/' sem vse potrebne funkcije premaknila v '/' pot. Ker sem imela dve pomembni funkciji v web aplikaciji, sem razdelila aplikacijo na dve aplikaciji vsaka na svojem portu v svojem image-u.
+- Mato sem ugotovila da imam drugačen ime host mysql baze kot pri dockerju.
+- Sedaj dela povezava z mqsql bazo samo vsakič prvo reče, da se ne more povezati, potem pa brez spremembe server poda dela.
 
 # Docker del
 ### Splošno o nalogi
