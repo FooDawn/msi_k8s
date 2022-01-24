@@ -19,6 +19,15 @@ Da dobiš ip strani odpri dashboard in pod ingress najdeš spletne strani ali pa
 
 Na koncu ugasni z `minikube stop; minikube delete`. Tako se tudi izbriše kar si delal.
 
+Za več navodil si poglej posnetka v mapi posnetki.
+    
+### Postopek
+1. http://<ip>/create_db Če ne dela, samo naloži ponovno. 
+2. http://<ip>/ Tukaj lahko uporabljaš aplikacijo.
+
+Kadarkoli lahko greš na http://go/
+
+
 # Docker del
 ### Splošno o nalogi
 
