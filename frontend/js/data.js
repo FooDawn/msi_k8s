@@ -1,4 +1,5 @@
 // globalne spremenjivke za inpute
+
 let pointer_return_num = document.getElementById("return_num")
 let pointer_return_name = document.getElementById("return_name")
 let pointer_return_desc = document.getElementById("return_desc")
@@ -21,11 +22,11 @@ function writing_point(){
     // console.log(event);
 
     // let url = "http://localhost:5000/write_points";
+
     let myLoc = window.location.hostname;
     let url = "http://" + String(myLoc) + "/write_points";
 
-    //console.log(url);
-    let js_res = null;
+    console.log(url);
 
     fetch(url, {method: 'POST', 
         headers: {
@@ -35,8 +36,7 @@ function writing_point(){
             bname : pointer_name.value,
             desc : pointer_description.value
     })})
-    .then(response => response.text())
-    //.then(commits => alert(commits[0].author.login))
+    .then(response => response.text())   
     .then(data => {
         let d = JSON.parse(data);
         let num = "Number of posted point: ";
@@ -47,6 +47,7 @@ function writing_point(){
         pointer_return_desc.innerHTML = desc + d.return_desc;
 
         // se pobrisemo oddane vrednosti
+
         pointer_name.value = ""; 
         pointer_description.value = ""; 
 
@@ -62,10 +63,11 @@ function getting_point(){
     // console.log(event);
 
     // let url = "http://localhost:5000/get_points";
+
     let myLoc = window.location.hostname;
     let url = "http://" + String(myLoc) + "/get_points";
 
-    // console.log(url);
+    console.log(url);
 
     fetch(url, {method: 'POST', 
         headers: {
@@ -75,7 +77,6 @@ function getting_point(){
             num_id : document.getElementById("number_id").value
     })})
     .then(response => response.text())
-    //.then(commits => alert(commits[0].author.login))
     .then(data => {
         let d = JSON.parse(data);
         let num = "Number of searched point: ";
