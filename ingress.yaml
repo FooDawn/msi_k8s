@@ -31,14 +31,14 @@ spec:
             name: webpy-write-service
             port:
               number: 5003
-      - path: /print_points
+      - path: /get_points
         pathType: Prefix
         backend:
           service:
             name: webpy-print-service
             port:
               number: 5000
-      - path: /gothem/
+      - path: /go/
         pathType: Prefix
         backend:
           service:
