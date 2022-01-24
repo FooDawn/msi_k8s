@@ -11,5 +11,4 @@ spec:
     name: mysql
   selector:
     app: db
-  clusterIP: None
   type: ClusterIP
