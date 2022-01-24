@@ -22,10 +22,10 @@ Na koncu ugasni z `minikube stop; minikube delete`. Tako se tudi izbriše kar si
 Za več navodil si poglej posnetka v mapi posnetki.
     
 ### Postopek
-1. http://<ip>/create_db Če ne dela, samo naloži ponovno. 
-2. http://<ip>/ Tukaj lahko uporabljaš aplikacijo.
+1. http://tvoj_ip/create_db Če ne dela, samo naloži ponovno. 
+2. http://tvoj_ip/ Tukaj lahko uporabljaš aplikacijo.
 
-Kadarkoli lahko greš na http://go/
+Kadarkoli lahko greš na http://tvoj_ip/go/
 
 ## Težave pri programiranju
     
@@ -35,6 +35,8 @@ Zelo veliko težav sem imela Ingressu in kako povezati backend v flasku s fronte
 - Potem mi ni uspelo povezati se s pravilno funkcijo v backend flask aplikaciji. Ker mi je uspelo se povezati na '/' sem vse potrebne funkcije premaknila v '/' pot. Ker sem imela dve pomembni funkciji v web aplikaciji, sem razdelila aplikacijo na dve aplikaciji vsaka na svojem portu v svojem image-u.
 - Mato sem ugotovila da imam drugačen ime host mysql baze kot pri dockerju.
 - Sedaj dela povezava z mqsql bazo samo vsakič prvo reče, da se ne more povezati, potem pa brez spremembe server poda dela.
+
+Provisioning je pri meni potekalo cca 15 minut, ker je kar dolgo vleko image iz dockerHuba. Lahko da je problem v nastavitevah virtualke v kateri sem delala (VMvawe) samo nisem tega raziskovala.
 
 # Docker del
 ### Splošno o nalogi
