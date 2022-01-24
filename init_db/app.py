@@ -5,6 +5,7 @@ from random import randint
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def db_init():
   try:
