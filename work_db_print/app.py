@@ -22,7 +22,7 @@ def get_points() :
         h_num_id = request.json.get("num_id")
 
         mydb_conn = mysql.connector.connect(
-          host="database_ms",
+          host="mysql",
           user="root",
           password="gesl0",
           database="bullet_points"

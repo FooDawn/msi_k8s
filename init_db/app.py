@@ -20,7 +20,7 @@ def db_init():
     cursor.close()
 
     mydb_conn = mysql.connector.connect(
-      host="database_ms",
+      host="mysql",
       user="root",
       password="gesl0",
       database="bullet_points"
@@ -34,7 +34,7 @@ def db_init():
     cursor.close()
 
     return 'Database is created and it is empty.\n'
-    
+
   except mysql.connector.Error as error:
       return ("Failed to get record from MySQL table: {}".format(error))
 
